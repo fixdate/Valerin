@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florencia - Mis 15 años</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Fraunces:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-primary: #715B9A;
+            --color-accent: #770EBF;
+            --color-teal: #3B91BC;
+            --color-pink: #AD4776;
+            --bg-pale: #FAF3F3;
+            --white: #FFFFFF;
+            --text-dark: #222222;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: var(--white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 8px;
+            height: 100vh;
+            background: linear-gradient(180deg, var(--bg-pale) 0%, var(--color-pink) 50%, var(--color-primary) 100%);
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            margin-left: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .date-small {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.9rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .name {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            margin-bottom: 2rem;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: var(--text-dark);
+            max-width: 400px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .countdown-section {
+            background: var(--bg-pale);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .countdown-item {
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 0.8rem;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .event-details {
+            background: var(--white);
+            border: 2px solid var(--bg-pale);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .event-date {
+            font-family: 'Fraunces', serif;
+            font-size: 1.3rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .venue {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .address {
+            color: var(--color-teal);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--color-primary);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+
+        .btn:hover, .btn:focus {
+            background: var(--color-accent);
+            transform: translateY(-2px);
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+
+        .btn-secondary {
+            background: var(--color-teal);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-pink);
+        }
+
+        .cta-section {
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .cta-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: var(--bg-pale);
+            border-radius: 15px;
+        }
+
+        .section-title {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .expandable {
+            margin: 1rem 0;
+        }
+
+        .expand-btn {
+            background: none;
+            border: none;
+            color: var(--color-accent);
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: underline;
+            font-size: 0.9rem;
+        }
+
+        .expand-content {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--color-primary);
+        }
+
+        .expand-content.show {
+            display: block;
+        }
+
+        .hashtag {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--color-accent);
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--bg-pale);
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            margin: 10% auto;
+            padding: 2rem;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+        }
+
+        .close:hover {
+            color: var(--text-dark);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--bg-pale);
+            border-radius: 8px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 3rem 2rem;
+            }
+
+            .name {
+                font-size: 4.5rem;
+            }
+
+            .countdown {
+                gap: 3rem;
+            }
+
+            .countdown-number {
+                font-size: 3.5rem;
+            }
+
+            .cta-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                margin-left: 3rem;
+            }
+
+            .cta-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="date-small">15.06.2022</div>
+            <h1 class="name">Florencia</h1>
+            <h2 class="subtitle">Mis 15 años</h2>
+            <p class="description">
+                Te espero para compartir la alegría de esa noche que será para mi mágica, inolvidable y única.
+            </p>
+        </header>
+
+        <section class="countdown-section">
+            <div id="countdown-display">
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">00</span>
+                        <span class="countdown-label">días</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">hs</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">min</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">seg</span>
+                    </div>
+                </div>
+            </div>
+            <div id="event-ended" style="display: none;">
+                <h3>Evento finalizado</h3>
+                <p id="time-passed"></p>
+            </div>
+        </section>
+
+        <section class="event-details">
+            <div class="event-date">Sábado 15 de Junio - 17hs</div>
+            <div class="venue">Salon Avril</div>
+            <div class="address">Av. Pergamino 203 - Bogotá</div>
+            <button class="btn btn-secondary" onclick="openMaps()">¿Cómo llegar?</button>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-grid">
+                <button class="btn" onclick="openRSVPModal()">CONFIRMAR ASISTENCIA A FIESTA</button>
+                <button class="btn" onclick="openSongModal()">SUGERIR CANCIÓN</button>
+                <button class="btn btn-secondary" onclick="downloadCalendar()">AGENDAR FIESTA</button>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">Música</h3>
+            <p>¿Cuál es la canción que no debe faltar en la playlist de la fiesta?</p>
+            <button class="btn" onclick="openSongModal()">SUGERIR CANCIÓN</button>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">Dress Code</h3>
+            <p>Una orientación para tu vestuario</p>
+            <div class="expandable">
+                <button class="expand-btn" onclick="toggleExpand('dress-code')">Ver más</button>
+                <div class="expand-content" id="dress-code">
+                    <p>Para esta ocasión especial, te sugerimos:</p>
+                    <ul>
+                        <li>Vestimenta elegante y formal</li>
+                        <li>Colores sugeridos: tonos pasteles, dorado, plateado</li>
+                        <li>Evitar: blanco (reservado para la quinceañera)</li>
+                        <li>Zapatos cómodos para bailar toda la noche</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">Tips y Notas</h3>
+            <p>Información adicional para tener en cuenta</p>
+            <div class="expandable">
+                <button class="expand-btn" onclick="toggleExpand('tips')">+ Info</button>
+                <div class="expand-content" id="tips">
+                    <ul>
+                        <li>La celebración incluye cena y baile</li>
+                        <li>Habrá servicio de fotografía profesional</li>
+                        <li>Confirma tu asistencia antes del 10 de junio</li>
+                        <li>Para consultas: contacta a la familia</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">Regalos</h3>
+            <p>Si deseas regalarme algo más que tu hermosa presencia...</p>
+            <div class="expandable">
+                <button class="expand-btn" onclick="toggleExpand('gifts')">Ver datos bancarios</button>
+                <div class="expand-content" id="gifts">
+                    <p><strong>Datos bancarios:</strong></p>
+                    <p>Banco: [Nombre del banco]<br>
+                    Cuenta: [Número de cuenta]<br>
+                    Titular: [Nombre del titular]</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">Compartí tus fotos y videos de ese hermoso día</h3>
+            <div class="hashtag">#15flor</div>
+            <button class="btn btn-secondary" onclick="openInstagram()">Ver en Instagram</button>
+        </section>
+
+        <footer class="footer">
+            <p>Desarrollado con ❤️ por [Logo placeholder]</p>
+            <p style="font-size: 0.7rem; margin-top: 1rem;">15/09/25, 11:48 a.m. Página 1 de 1</p>
+        </footer>
+    </div>
+
+    <!-- RSVP Modal -->
+    <div id="rsvpModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('rsvpModal')">&times;</span>
+            <h3>Confirmar Asistencia</h3>
+            <form id="rsvpForm">
+                <div class="form-group">
+                    <label for="name">Nombre completo:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="attendance">¿Confirmas tu asistencia?</label>
+                    <select id="attendance" name="attendance" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="si">Sí, asistiré</option>
+                        <option value="no">No podré asistir</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">CONFIRMAR</button>
+            </form>
+            <div class="success-message" id="rsvpSuccess">
+                ¡Gracias por confirmar tu asistencia! Nos vemos en la fiesta.
+            </div>
+        </div>
+    </div>
+
+    <!-- Song Modal -->
+    <div id="songModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('songModal')">&times;</span>
+            <h3>Sugerir Canción</h3>
+            <form id="songForm">
+                <div class="form-group">
+                    <label for="songName">Nombre de la canción:</label>
+                    <input type="text" id="songName" name="songName" required>
+                </div>
+                <div class="form-group">
+                    <label for="artist">Artista:</label>
+                    <input type="text" id="artist" name="artist" required>
+                </div>
+                <div class="form-group">
+                    <label for="suggesterName">Tu nombre:</label>
+                    <input type="text" id="suggesterName" name="suggesterName" required>
+                </div>
+                <button type="submit" class="btn">ENVIAR SUGERENCIA</button>
+            </form>
+            <div class="success-message" id="songSuccess">
+                ¡Gracias por tu sugerencia musical! La tendremos en cuenta para la playlist.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const eventDate = new Date('2022-06-15T17:00:00-05:00'); // Bogotá timezone
+            const now = new Date();
+            const difference = eventDate.getTime() - now.getTime();
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            } else {
+                document.getElementById('countdown-display').style.display = 'none';
+                document.getElementById('event-ended').style.display = 'block';
+                
+                const timePassed = now.getTime() - eventDate.getTime();
+                const daysPassed = Math.floor(timePassed / (1000 * 60 * 60 * 24));
+                const yearsPassed = Math.floor(daysPassed / 365);
+                
+                let timePassedText = '';
+                if (yearsPassed > 0) {
+                    timePassedText = `Han pasado ${yearsPassed} año${yearsPassed > 1 ? 's' : ''} y ${daysPassed % 365} día${(daysPassed % 365) > 1 ? 's' : ''} desde la celebración`;
+                } else {
+                    timePassedText = `Han pasado ${daysPassed} día${daysPassed > 1 ? 's' : ''} desde la celebración`;
+                }
+                
+                document.getElementById('time-passed').textContent = timePassedText;
+            }
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+
+        // Modal functions
+        function openRSVPModal() {
+            document.getElementById('rsvpModal').style.display = 'block';
+            document.getElementById('rsvpModal').setAttribute('aria-hidden', 'false');
+        }
+
+        function openSongModal() {
+            document.getElementById('songModal').style.display = 'block';
+            document.getElementById('songModal').setAttribute('aria-hidden', 'false');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.getElementById(modalId).setAttribute('aria-hidden', 'true');
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                event.target.setAttribute('aria-hidden', 'true');
+            }
+        }
+
+        // Form submissions
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('rsvpSuccess').style.display = 'block';
+            setTimeout(() => {
+                closeModal('rsvpModal');
+                document.getElementById('rsvpSuccess').style.display = 'none';
+                this.reset();
+            }, 2000);
+        });
+
+        document.getElementById('songForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('songSuccess').style.display = 'block';
+            setTimeout(() => {
+                closeModal('songModal');
+                document.getElementById('songSuccess').style.display = 'none';
+                this.reset();
+            }, 2000);
+        });
+
+        // External links
+        function openMaps() {
+            window.open('https://www.google.com/maps/search/?api=1&query=Av.+Pergamino+203+Bogotá', '_blank');
+        }
+
+        function openInstagram() {
+            window.open('https://www.instagram.com/explore/tags/15flor/', '_blank');
+        }
+
+        // Calendar download
+        function downloadCalendar() {
+            const eventData = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Florencia//15 años//ES
+BEGIN:VEVENT
+UID:florencia15@example.com
+DTSTAMP:20220615T170000Z
+DTSTART:20220615T220000Z
+DTEND:20220616T030000Z
+SUMMARY:Florencia - Mis 15 años
+DESCRIPTION:Celebración de los 15 años de Florencia
+LOCATION:Salon Avril, Av. Pergamino 203, Bogotá
+END:VEVENT
+END:VCALENDAR`;
+
+            const blob = new Blob([eventData], { type: 'text/calendar' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'florencia-15-años.ics';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        // Expandable sections
+        function toggleExpand(sectionId) {
+            const content = document.getElementById(sectionId);
+            const button = content.previousElementSibling;
+            
+            if (content.classList.contains('show')) {
+                content.classList.remove('show');
+                button.textContent = button.textContent.includes('Ver más') ? 'Ver más' : '+ Info';
+            } else {
+                content.classList.add('show');
+                button.textContent = 'Ver menos';
+            }
+        }
+
+        // Keyboard accessibility
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    if (modal.style.display === 'block') {
+                        modal.style.display = 'none';
+                        modal.setAttribute('aria-hidden', 'true');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
