@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniela - Mis 15 años</title>
+    <title>Valerin - Mis 15 años</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -281,68 +281,57 @@
 
         /* Sección de cuenta regresiva - Diseño de cristal */
         .countdown-section {
-            padding: 5rem 2rem;
-            background: linear-gradient(135deg, var(--secondary-violet) 0%, var(--primary-violet) 100%);
-            position: relative;
+            padding: 4rem 2rem;
+            background: var(--primary-cream);
+            text-align: center;
         }
 
         .countdown-container {
-            background: rgba(248, 244, 255, 0.8);
-            backdrop-filter: blur(15px);
-            border-radius: 30px;
-            padding: 3rem;
+            background: var(--primary-cream);
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
             margin: 0 auto;
-            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             box-shadow: var(--shadow-medium);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            text-align: center;
+            border: 3px solid var(--accent-champagne);
         }
 
         .countdown-label {
             font-family: var(--primary-font);
-            font-size: 2.5rem;
-            color: var(--text-dark);
-            margin-bottom: 2rem;
-            font-weight: 600;
+            font-size: 1.8rem;
+            color: var(--text-medium);
+            margin-bottom: 1rem;
+            font-weight: 400;
         }
 
         .countdown-timer {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 1rem;
+            margin-bottom: 1rem;
         }
 
         .countdown-item {
             text-align: center;
-            background: var(--purple-gradient);
-            border-radius: 20px;
-            padding: 1.5rem 1rem;
-            color: white;
-            box-shadow: var(--shadow-soft);
-            transform: translateY(0);
-            transition: var(--transition);
-        }
-
-        .countdown-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
         }
 
         .countdown-number {
             font-family: var(--primary-font);
-            font-size: 3rem;
-            font-weight: 700;
+            font-size: 2.8rem;
+            font-weight: 400;
+            color: var(--accent-gold);
             display: block;
             line-height: 1;
-            margin-bottom: 0.5rem;
         }
 
         .countdown-text {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
+            color: var(--text-light);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0.9;
         }
 
         /* Botón CTA con efecto mágico */
@@ -980,8 +969,8 @@
             .section-title { font-size: 3rem; }
             .detail-title { font-size: 2rem; }
             .info-title { font-size: 2rem; }
-            .countdown-number { font-size: 2.5rem; }
-            .countdown-label { font-size: 2rem; }
+            .countdown-number { font-size: 2rem; }
+            .countdown-label { font-size: 1.4rem; }
             .photo-caption h3 { font-size: 1.8rem; }
             .modal-content h3 { font-size: 2.5rem; }
             .hero-content { padding: 2rem 1.5rem; }
@@ -995,8 +984,8 @@
             .section-title { font-size: 2.5rem; }
             .detail-title { font-size: 1.8rem; }
             .info-title { font-size: 1.8rem; }
-            .countdown-number { font-size: 2rem; }
-            .countdown-label { font-size: 1.8rem; }
+            .countdown-number { font-size: 1.6rem; }
+            .countdown-label { font-size: 1.2rem; }
             .photo-caption h3 { font-size: 1.6rem; }
             .modal-content h3 { font-size: 2rem; }
             .hero-content { padding: 1.5rem 1rem; }
@@ -1018,7 +1007,7 @@
 
         <div class="hero-content">
             <div class="date-badge">29 • NOVIEMBRE • 2025</div>
-            <h1 class="hero-title">Daniela</h1>
+            <h1 class="hero-title">Valerin</h1>
             <p class="hero-subtitle">M I S &nbsp; X V &nbsp; A Ñ O S</p>
             <p class="hero-text">
                 Dicen que los 15 sólo se viven una vez, así que hagamos que sea memorable. Ven a bailar, reír y disfrutar conmigo en mi gran día...
@@ -1056,6 +1045,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- CTA Section -->
     <section class="cta-section">
@@ -1102,7 +1092,7 @@
                 <div class="carousel" id="carousel">
                     <div class="carousel-slide">
                         <div class="photo-card">
-                            <img src="/placeholder.svg" alt="Daniela bebé" class="carousel-image" onclick="openLightbox(this.src)">
+                            <img src="/placeholder.svg" alt="Valerin bebé" class="carousel-image" onclick="openLightbox(this.src)">
                             <div class="photo-caption">
                                 <h3>Mis primeros años</h3>
                                 <p>2010 - 2013</p>
@@ -1111,7 +1101,7 @@
                     </div>
                     <div class="carousel-slide">
                         <div class="photo-card">
-                            <img src="/placeholder.svg" alt="Daniela niña" class="carousel-image" onclick="openLightbox(this.src)">
+                            <img src="/placeholder.svg" alt="Valerin niña" class="carousel-image" onclick="openLightbox(this.src)">
                             <div class="photo-caption">
                                 <h3>Creciendo feliz</h3>
                                 <p>2014 - 2018</p>
@@ -1120,7 +1110,7 @@
                     </div>
                     <div class="carousel-slide">
                         <div class="photo-card">
-                            <img src="/placeholder.svg" alt="Daniela adolescente" class="carousel-image" onclick="openLightbox(this.src)">
+                            <img src="/placeholder.svg" alt="Valerin adolescente" class="carousel-image" onclick="openLightbox(this.src)">
                             <div class="photo-caption">
                                 <h3>Mis 15 años</h3>
                                 <p>2019 - 2025</p>
@@ -1185,12 +1175,12 @@
     <!-- Footer -->
     <footer class="footer">
         <h2 class="footer-title">Una gran fiesta junto a vos</h2>
-        <p class="footer-hashtag">#15Daniela</p>
+        <p class="footer-hashtag">#15Valerin</p>
         <div class="social-links">
             <a href="#" class="social-link">📷</a>
             <a href="#" class="social-link">🎵</a>
         </div>
-        <p>&copy; 2025 Daniela - Mis 15 años</p>
+        <p>&copy; 2025 Valerin - Mis 15 años</p>
     </footer>
 
     <!-- Modales -->
@@ -1375,10 +1365,10 @@
         // Add to calendar functionality
         function addToCalendar() {
             const eventDetails = {
-                title: 'Daniela - Mis 15 años',
+                title: 'Valerin - Mis 15 años',
                 start: '20251129T184500Z',
                 end: '20251130T030000Z',
-                description: 'Celebración de los 15 años de Daniela - Dress Code: Elegante en Blanco',
+                description: 'Celebración de los 15 años de Valerin - Dress Code: Elegante en Blanco',
                 location: 'Caminos del Bosque, Manzana 7 número 31'
             };
 
@@ -1474,7 +1464,7 @@
             const message = formData.get('message') || '';
             
             // Mensaje para WhatsApp
-            let whatsappMessage = `¡Hola! Soy ${name} y confirmo mi asistencia a la fiesta de 15 años de Daniela 🎉\n\n`;
+            let whatsappMessage = `¡Hola! Soy ${name} y confirmo mi asistencia a la fiesta de 15 años de Valerin 🎉\n\n`;
             whatsappMessage += `📅 Fecha: 29 de Noviembre - 6:45 PM\n`;
             whatsappMessage += `👥 Asistirán: ${guests} persona${guests > 1 ? 's' : ''}\n`;
             whatsappMessage += `📱 Mi teléfono: ${phone}\n`;
